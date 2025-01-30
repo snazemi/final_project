@@ -1,10 +1,6 @@
-import json, requests
+import requests, json
 
 def emotion_detector(text_to_analyze):
-    """
-    In the emotion_detection.py file, write the function to run emotion detection using the appropriate Emotion Detection function. Name this function emotion_detector.
-    Note: Assume that that text to be analyzed is passed to the function as an argument and is stored in the variable text_to_analyze. The value being returned must be the text attribute of the response object as received from the Emotion Detection function.
-    """
 
     # entering the API call details as per Task 2 details
     URL = 'https://sn-watson-emotion.labs.skills.network/v1/watson.runtime.nlp.v1/NlpService/EmotionPredict'
@@ -13,5 +9,25 @@ def emotion_detector(text_to_analyze):
 
     # make the POST call and receive response
     response = requests.post(URL, json=input_json, headers=headers)
+    formatted_response = ''
 
-    return response.text
+    # extract the set of emotions from response
+    if response.status_code == 200:
+        json_response = json.loads(response.text)
+        formatted_response = {
+            'anger': json_response["emotionPredictions"][0]["emotion"]["anger"],
+            'disgust': json_response["emotionPredictions"][0]["emotion"]["disgust"],
+            'fear': json_response["emotionPredictions"][0]["emotion"]["fear"],
+            'joy': json_response["emotionPredictions"][0]["emotion"]["joy"],
+            'sadness': json_response["emotionPredictions"][0]["emotion"]["sadness"],
+            'dominant_emotion': ''
+        }
+
+        highest_emotion = 0
+        for emotion_name in formatted_response.keys():
+            if(isinstance(formatted_response[emotion_name], float)):
+                if highest_emotion < formatted_response[emotion_name]:
+                    formatted_response["dominant_emotion"] = emotion_name
+
+
+    return formatted_response
