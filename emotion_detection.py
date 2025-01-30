@@ -26,7 +26,9 @@ def emotion_detector(text_to_analyze):
         highest_emotion = 0
         for emotion_name in formatted_response.keys():
             if(isinstance(formatted_response[emotion_name], float)):
+                print(emotion_name, highest_emotion, "---", formatted_response[emotion_name])
                 if highest_emotion < formatted_response[emotion_name]:
+                    highest_emotion = formatted_response[emotion_name]
                     formatted_response["dominant_emotion"] = emotion_name
 
 
