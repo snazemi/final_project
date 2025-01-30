@@ -15,5 +15,3 @@ def emotion_detector(text_to_analyze):
     response = requests.post(URL, json=input_json, headers=headers)
 
     return response.text
-
-print(emotion_detector ("I love this new technology"))
