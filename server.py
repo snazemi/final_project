@@ -13,9 +13,6 @@ def index():
 def emotion_detector_func():
     statement = request.args.get('textToAnalyze')
     
-    if not statement:
-        return ("No statement provided", 400)
-    
     emotions = emotion_detector(statement)
     
     if emotions["dominant_emotion"] is None:
@@ -32,4 +29,4 @@ def emotion_detector_func():
     return (formatted_response)
 
 if __name__ == '__main__':
-    app.run(host='localhost', port=5050)
+    app.run(host='localhost', port=5001)
