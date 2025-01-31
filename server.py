@@ -10,7 +10,7 @@ def index():
     return render_template('index.html')
 
 @app.route('/emotionDetector')
-def emotion_detector():
+def emotion_detector_func():
     statement = request.args.get('textToAnalyze')
     
     if not statement:
