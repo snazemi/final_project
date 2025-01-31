@@ -40,4 +40,4 @@ def emotion_detector_func():
     return (formatted_response, returning_status)
 
 if __name__ == '__main__':
-    app.run(host='localhost', port=5000)
+    app.run(host='localhost', port=5050)
