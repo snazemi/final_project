@@ -16,7 +16,6 @@ def emotion_detector_func():
     if not statement:
         return ("No statement provided", 400)
     
-    print(statement)
     emotions = emotion_detector(statement)
     dominant_emotion = emotions["dominant_emotion"]
     
@@ -34,4 +33,4 @@ def emotion_detector_func():
     return (formatted_response)
 
 if __name__ == '__main__':
-    app.run(host='localhost', port=5000)
+    app.run(host='localhost', port=5050)
