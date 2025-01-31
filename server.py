@@ -9,7 +9,7 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
-@app.route('/emotionDetector', methods=['POST'])
+@app.route('/emotionDetector')
 def emotion_detector():
     statement = request.args.get('textToAnalyze')
     
