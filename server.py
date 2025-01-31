@@ -14,7 +14,7 @@ def emotion_detector():
     statement = request.args.get('textToAnalyze')
     
     if not statement:
-        return jsonify({"error": "No statement provided"}), 400
+        return ("No statement provided", 400)
     
     print(statement)
     emotions = emotion_detector(statement)
