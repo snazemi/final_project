@@ -22,6 +22,15 @@ def emotion_detector(text_to_analyze):
             'sadness': json_response["emotionPredictions"][0]["emotion"]["sadness"],
             'dominant_emotion': ''
         }
+    elif response.status_code == 400:
+        formatted_response = {
+            'anger': None,
+            'disgust': None,
+            'fear': None,
+            'joy': None,
+            'sadness': None,
+            'dominant_emotion': None
+        }
 
 
         # calculate and set the dominant_emotion
