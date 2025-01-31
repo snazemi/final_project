@@ -22,9 +22,9 @@ def emotion_detector_func():
     
     
     formatted_response = (
-        f"For the given statement, the system response is 'anger': {emotions['anger']}, "
-        f"'disgust': {emotions['disgust']}, 'fear': {emotions['fear']}, 'joy': {emotions['joy']} "
-        f"and 'sadness': {emotions['sadness']}. The dominant emotion is {emotions['dominant_emotion']}."
+        f"For the given statement, the system response is <br />'anger': {emotions['anger']}, <br />"
+        f"'disgust': {emotions['disgust']}, <br />'fear': {emotions['fear']}, <br />'joy': {emotions['joy']} <br />"
+        f"and 'sadness': {emotions['sadness']}. <br />The dominant emotion is <b>{emotions['dominant_emotion']}</b>."
     )
     
     return (formatted_response)
