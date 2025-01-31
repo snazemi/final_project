@@ -22,7 +22,7 @@ def emotion_detector_func():
             'sadness': None,
             'dominant_emotion': None
         }
-        returning_status = 400
+        returning_status = 201
     else:    
         emotions = emotion_detector(statement)
         returning_status = 200
