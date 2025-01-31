@@ -17,7 +17,6 @@ def emotion_detector_func():
         return ("No statement provided", 400)
     
     emotions = emotion_detector(statement)
-    dominant_emotion = emotions["dominant_emotion"]
     
     if emotions["dominant_emotion"] is None:
         formatted_response = (
