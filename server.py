@@ -16,6 +16,7 @@ def emotion_detector():
     if not statement:
         return jsonify({"error": "No statement provided"}), 400
     
+    print(statement)
     emotions = emotion_detector(statement)
     dominant_emotion = emotions["dominant_emotion"]
     
