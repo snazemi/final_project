@@ -26,7 +26,7 @@ def emotion_detector():
         f"and 'sadness': {emotions['sadness']}. The dominant emotion is {emotions['dominant_emotion']}."
     )
     
-    return jsonify({"response": formatted_response})
+    return (formatted_response)
 
 if __name__ == '__main__':
     app.run(host='localhost', port=5000)
